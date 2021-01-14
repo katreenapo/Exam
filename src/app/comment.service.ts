@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Comment } from './form/form.model';
 
 @Injectable({
   providedIn: 'root'
@@ -6,14 +7,14 @@ import { Injectable } from '@angular/core';
 export class CommentService {
   constructor() { }
 
-  newComments: Comment [] = [];
+  comments: Comment [] = [];
 
   getComment() {
-    return this.newComments;
+    return this.comments;
   }
 
   AddNewComment(com: any) {
-    this.newComments.push({
+    this.comments.push({
       name: com.name,
       email: com.email,
       comment: com.comment
@@ -21,6 +22,6 @@ export class CommentService {
   }
 
   deleteComment(i: number) {
-    this.newComments.splice(i, 1);
+    this.comments.splice(i, 1);
   }
 }

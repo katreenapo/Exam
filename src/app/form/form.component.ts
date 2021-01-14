@@ -1,6 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommentService } from '../comment.service';
+import { Comment } from './form.model';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { CommentService } from '../comment.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  newComments: Comment[];
+  comments: Comment [];
   allComm = [];
   
   formExam: FormGroup;
@@ -30,7 +31,7 @@ export class FormComponent implements OnInit {
     });
 
     
-    this.newComments = this.commentService.getComment();
+    this.comments = this.commentService.getComment();
   }
 
   get f() {
