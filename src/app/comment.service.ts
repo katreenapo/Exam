@@ -6,14 +6,14 @@ import { Injectable } from '@angular/core';
 export class CommentService {
   constructor() { }
 
-  comments: Comment [] = [];
+  newComments: Comment [] = [];
 
-  getCom() {
-    return this.comments;
+  getComment() {
+    return this.newComments;
   }
 
   AddNewComment(com: any) {
-    this.comments.push({
+    this.newComments.push({
       name: com.name,
       email: com.email,
       comment: com.comment
@@ -21,6 +21,6 @@ export class CommentService {
   }
 
   deleteComment(i: number) {
-    this.comments.splice(i, 1);
+    this.newComments.splice(i, 1);
   }
 }

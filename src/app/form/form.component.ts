@@ -9,7 +9,7 @@ import { CommentService } from '../comment.service';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
-  comments: Comment[];
+  newComments: Comment[];
   allComm = [];
   
   formExam: FormGroup;
@@ -28,6 +28,9 @@ export class FormComponent implements OnInit {
       comment: ['', [Validators.required, Validators.maxLength(150)]],
 
     });
+
+    
+    this.newComments = this.commentService.getComment();
   }
 
   get f() {
