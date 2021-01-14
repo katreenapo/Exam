@@ -12,11 +12,11 @@ export class CommentService {
     return this.comments;
   }
 
-  AddNewComment(comment: any) {
+  AddNewComment(com: any) {
     this.comments.push({
-      name: comment.name,
-      email: comment.email,
-      comment: comment.comment
+      name: com.name,
+      email: com.email,
+      comment: com.comment
     });
   }
 
